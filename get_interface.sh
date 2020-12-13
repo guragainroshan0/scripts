@@ -22,7 +22,7 @@ function get_public_ip(){
 
 
 function interface_ip(){
-	get_interface_ip | grep "$1"
+	get_interface_ip | grep "$1" | awk '{print $2}'
 }
 
 function get_interface_ip(){
