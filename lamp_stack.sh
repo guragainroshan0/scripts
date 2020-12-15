@@ -130,7 +130,7 @@ check_installed php
 
 echo "Do you want to create a new user and database?[y/n]  "
 read var
-if [ "$var"=="y" ]
+if [ "$var" = "y" ]
 then
 create_mysql_user
 fi
