@@ -19,7 +19,8 @@ EOF
 
 function get_public_ip(){
 #curl the ifconfig.me site -s for silent as it prints more
-	echo "Public IP : $(curl -s ifconfig.me)"
+	echo "Public IPv4 : $(curl -s ifconfig.me)"
+	echo "Public IPv6 : $(echo `dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com` | sed s/\"//g)"
 }
 
 
@@ -87,4 +88,5 @@ do
 done
 #if no arguments are given show all data	
 get_public_ip		
+printf "\n\n"
 get_interface_ip
