@@ -1,12 +1,16 @@
+# script to create azure resources
+# is meant to work as a module. Not a good implementation
+
 #todo write scriptts to create other resources as well
+
 function create_credentials($server_name)
 {
 	# get credentials for server to create
 	# these credentials are later used to authenticate to the deployed virtual Machines
 
 	# username and password Strings, Not a good approach need to change it later
-	[String]$username = "rogi9"+$server_name
-	[String]$password = "changeme123!!" + $server_name
+	[String]$username = "<dummy-username>"+$server_name
+	[String]$password = "<dummy-password>" + $server_name
 
 	# convert password to securestring
 	[securestring]$secPassword = ConvertTo-SecureString $password -AsPlainText -Force
